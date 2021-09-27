@@ -31,3 +31,14 @@
       interface: internal
       explicitly implemented interface member: public!
    ```
+    * As stated in the above code, if we dont specify an accessor for constructor it will be private by default
+
+* Private constructors
+  A private constructor is a special instance constructor. It is generally used in classes that contain static members only. If a class has one or more private constructors and   no public constructors, other classes (except nested classes) cannot create instances of this class.
+* Static Constructors
+  A static constructor is used to initialize any static data, or to perform a particular action that needs to be performed only once. It is called automatically before the first   instance is created or any static members are referenced. 
+    * A static constructor doesn't take access modifiers or have parameters.
+    * A class or struct can only have one static constructor.
+    * Static constructors cannot be inherited or overloaded.
+    * A field declared as static readonly may only be assigned as part of its declaration or in a static constructor. When an explicit static constructor isn't required,       
+      initialize static fields at declaration rather than through a static constructor for better runtime optimization.
