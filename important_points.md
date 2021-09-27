@@ -40,5 +40,5 @@
     * A static constructor doesn't take access modifiers or have parameters.
     * A class or struct can only have one static constructor.
     * Static constructors cannot be inherited or overloaded.
-    * A field declared as static readonly may only be assigned as part of its declaration or in a static constructor. When an explicit static constructor isn't required,       
+    * A field declared as static readonly may only be assigned as part of its declaration or in a static constructor. When an explicit static constructor isn't required,
       initialize static fields at declaration rather than through a static constructor for better runtime optimization.
