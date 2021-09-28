@@ -42,3 +42,14 @@
     * Static constructors cannot be inherited or overloaded.
     * A field declared as static readonly may only be assigned as part of its declaration or in a static constructor. When an explicit static constructor isn't required,
       initialize static fields at declaration rather than through a static constructor for better runtime optimization.
+
+* Implicitly-typed variables must be initialized at the time of declaration; otherwise C# compiler would give an error: Implicitly-typed variables must be initialized.
+* var i = 100, j = 200, k = 300; // Error: cannot declare var variables in a single statement
+* ```
+   void Display(var param) //Compile-time error
+  {
+      Console.Write(param);
+  }
+  ```
+* Values types vs Reference types
+  ![image](https://user-images.githubusercontent.com/30605841/135105218-960ae45d-6814-4cba-bad8-050d21317d01.png)
