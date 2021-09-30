@@ -126,7 +126,7 @@
       The mere declaration S1 baseTypeVariable asks the compiler to allocate enough space for a value of type S1 – and this size is just the size of an int by definition of S1.
       Assigning a value of type S2 to that variable poses a problem, because S2 values use up more memory.
       ```
-   *  Boxing of value types
+  *  Boxing of value types
       ```
       int x = 42;
       object a = x; // value of x is copied into box of a along with meta information of x type, so equals calls appropriate int equals
@@ -176,6 +176,41 @@
       1
       ```
       
+* Enums:
+  Enum can be of any numeric data type such as byte, sbyte, short, ushort, int, uint, long, or ulong. However, an enum cannot be a string type.
+  enum is an abstract class
 
-  
-  
+  Example:
+  ```
+   enum Categories: byte
+    {
+        Electronics = 1,  
+        Food = 5, 
+        Automotive = 6, 
+        Arts = 10, 
+        BeautyCare = 11, 
+        Fashion = 15
+    }
+  ```
+      
+* In C# the string type is immutable whereas StringBuilder dynamically expands its memory.
+* Anonymous type is a type (class) without any name that can contain public read-only properties only. It cannot contain other members, such as fields, methods, events, etc.
+   * The properties of anonymous types are read-only
+   * An anonymous type will always be local to the method where it is defined. It cannot be returned from the method. However, an anonymous type can be passed to the method          as object type parameter, but it is not recommended. If you need to pass it to another method, then use struct or class instead of an anonymous type.
+ 
+* Dynamic are types that avoids compile-time type checking. A dynamic type escapes type checking at compile-time; instead, it resolves type at run time.
+  * Dynamic types change types at run-time based on the assigned value. The following example shows how a dynamic variable changes type based on assigned value.
+  * ```
+    dynamic MyDynamicVar = 100;
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+    MyDynamicVar = "Hello World!!";
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+    The above code would output:
+    Value: 100, Type: System.Int32
+    Value: Hello World!!, Type: System.String
+    ```
+* Nullable Types:
+  `Nullable<int> i = null;`
+  Short hand syntax is: `int? i = null;`
