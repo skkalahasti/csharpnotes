@@ -53,3 +53,10 @@
   ```
 * Values types vs Reference types
   ![image](https://user-images.githubusercontent.com/30605841/135105218-960ae45d-6814-4cba-bad8-050d21317d01.png)
+
+* Prefixing the string with an @ indicates that it should be treated as a literal and should not escape any character.
+  ```
+  string text = @"This is a "string." in C#."; // error
+  string text = @"This is a \"string\" in C#."; // error
+  string text = "This is a \"string\" in C#."; // valid
+  ```
