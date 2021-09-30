@@ -98,7 +98,7 @@
         }
         ```
     * Assignment to a variable of a struct type creates a copy of the value being assigned
-    * Inheritence is not allowed in structs:
+  * Inheritence is not allowed in structs:
       ```
       Consider the following class declarations with inheritance:
 
@@ -126,7 +126,7 @@
       The mere declaration S1 baseTypeVariable asks the compiler to allocate enough space for a value of type S1 – and this size is just the size of an int by definition of S1.
       Assigning a value of type S2 to that variable poses a problem, because S2 values use up more memory.
       ```
-    * Boxing of value types
+   *  Boxing of value types
       ```
       int x = 42;
       object a = x; // value of x is copied into box of a along with meta information of x type, so equals calls appropriate int equals
@@ -175,7 +175,6 @@
       1
       1
       ```
-    * 
       
 
   
