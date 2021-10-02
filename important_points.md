@@ -214,3 +214,63 @@
 * Nullable Types:
   `Nullable<int> i = null;`
   Short hand syntax is: `int? i = null;`
+
+* Interfaces
+   * You cannot apply access modifiers to interface members. All the members are public by default. If you use an access modifier in an interface, then the C# compiler will give 
+     a compile-time error "The modifier 'public/private/protected' is not valid for this item.".
+   * Interface can still contain `const` fields and also default implementations;
+   * Implemented classes know nothing about the default methods
+     ```
+     public interface ITest {
+	
+        public const string name = "interface";
+
+        public void DoSomething(string tex)
+        {
+          Console.WriteLine($"Done interface: {tex} : {name}");
+        }
+      }
+
+      public class Test : ITest {
+
+        public string name = "class";
+      }
+      
+       Test t = new Test();
+       t.DoSomething("yoo"); // Error Class1 does not know about default implementation of ITes
+
+       ITest t1 = new Test();
+       t1.DoSomething("yoo"); // 
+     ```
+    * If there is an implementation of default method, interface reference still executes the implemented method rather than default method
+       ```
+       public interface ITest {
+	
+          public const string name = "interface";
+
+          public void DoSomething(string tex)
+          {
+            Console.WriteLine($"Done interface: {tex} : {name}");
+          }
+        }
+
+        public class Test : ITest {
+
+          public string name = "class";
+
+          public void DoSomething(string tex)
+          {
+            Console.WriteLine($"Done class: {tex} : {name}");
+          }
+        }
+        
+        		Test t = new Test();
+            t.DoSomething("yoo");
+
+            ITest t1 = new Test();
+            t1.DoSomething("yoo");
+            
+            // Output is:
+            Done class: yoo : class
+            Done class: yoo : class
+       ```
