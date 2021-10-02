@@ -264,7 +264,7 @@
           }
         }
         
-        		Test t = new Test();
+            Test t = new Test();
             t.DoSomething("yoo");
 
             ITest t1 = new Test();
@@ -274,3 +274,4 @@
             Done class: yoo : class
             Done class: yoo : class
        ```
+     * Constant fields can be accessed outside the interface only with its reference: `Interface.constant`
