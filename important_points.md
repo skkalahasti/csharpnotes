@@ -275,3 +275,46 @@
             Done class: yoo : class
        ```
      * Constant fields can be accessed outside the interface only with its reference: `Interface.constant`
+* Run time polymorphism:
+	```
+	public class Class1 {
+	
+		public string name = "class1";
+
+		public virtual void DoSomething()
+		{
+			Console.WriteLine($"In class1 & name: {name}");
+		}
+	}
+
+	public class Class2 : Class1 {
+
+		public string name = "class2";
+
+
+		public override void DoSomething()
+		{
+			Console.WriteLine($"In class2 & name: {name}");
+		}
+	}
+	
+	Class1 class1 = new Class1();
+	class1.DoSomething();
+	Console.WriteLine(class1.name);
+
+	Class2 class2 = new Class2();
+	class2.DoSomething();	
+	Console.WriteLine(class2.name);
+
+	Class1 hybrid = new Class2();
+	hybrid.DoSomething();
+	Console.WriteLine(hybrid.name);
+	
+	Output is: 
+	In class1 & name: class1
+	class1
+	In class2 & name: class2
+	class2
+	In class2 & name: class2
+	class1
+	```
