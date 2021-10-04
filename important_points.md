@@ -324,3 +324,9 @@
    * Partial Methods Using Partial Classes you can also define Partial methods as well where a developer can simply define the method and the other developer can implement that.
    * Partial Method Declaration only Even the code get compiled with method declaration only and if the implementation of the method isn't present compiler can safely remove 
      that piece of code and no compile time error will occur.
+     
+* Static classes
+   * All the members of a static class must be static; otherwise the compiler will give an error.
+   * Static classes are sealed class and therefore, cannot be inherited.
+   * You cannot call static methods using an object of the non-static class.
+   * You cannot access non-static members of the class in the static methods.
