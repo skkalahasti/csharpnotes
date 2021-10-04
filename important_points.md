@@ -318,3 +318,9 @@
 	In class2 & name: class2
 	class1
 	```
+* Partial Classes
+   * Multiple Developer Using Partial Classes multiple developer can work on the same class easily.
+   * Code Generator Partial classes are mainly used by code generator to keep different concerns separate
+   * Partial Methods Using Partial Classes you can also define Partial methods as well where a developer can simply define the method and the other developer can implement that.
+   * Partial Method Declaration only Even the code get compiled with method declaration only and if the implementation of the method isn't present compiler can safely remove 
+     that piece of code and no compile time error will occur.
