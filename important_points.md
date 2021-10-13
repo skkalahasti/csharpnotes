@@ -330,3 +330,39 @@
    * Static classes are sealed class and therefore, cannot be inherited.
    * You cannot call static methods using an object of the non-static class.
    * You cannot access non-static members of the class in the static methods.
+* Indexers are a syntactic convenience that enable you to create a class, struct, or interface that client applications can access as an array
+	```
+		public class Person{
+		    public string Name{get; set;}
+
+		    private Person[] _backingStore;
+		    public Person this[int index]
+		    {
+			get{
+			    return _backingStore[index];
+			}
+			set{
+			    _backingStore[index] = value;
+			}
+		    }
+		}
+
+		Person p = new Person();
+		p[0] = new Person(){Name = "Hassan"};
+		p[1] = new Person(){Name = "John Skeet"};  
+	```
+* Collections
+  Here are some generic collections:
+  	* List<T>
+	* Dictionary<TKey, TValue>
+	* SortedList<TKey, TValue>
+	* Queue<T>
+	* Stack<T>
+	* HashSet<T>
+  Non-generic collections:
+	* ArrayList
+	* SortedList
+	* Stack
+	* Queue
+	* HashTable
+	* BitArray
