@@ -352,14 +352,15 @@
 		p[1] = new Person(){Name = "John Skeet"};  
 	```
 * Collections
-  Here are some generic collections:
+  * Here are some generic collections:
   	* List<T>
 	* Dictionary<TKey, TValue>
 	* SortedList<TKey, TValue>
 	* Queue<T>
 	* Stack<T>
 	* HashSet<T>
-  Non-generic collections:
+  
+  * Non-generic collections:
 	* ArrayList
 	* SortedList
 	* Stack
